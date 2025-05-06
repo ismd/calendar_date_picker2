@@ -250,6 +250,8 @@ class _CalendarDatePicker2State extends State<CalendarDatePicker2> {
   }
 
   void _handleDayChanged(DateTime value) {
+    if (widget.config.disableDaySelection == true) return;
+
     _vibrate();
     setState(() {
       var selectedDates = [..._selectedDates];

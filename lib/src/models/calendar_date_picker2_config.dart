@@ -415,6 +415,9 @@ class CalendarDatePicker2Config {
   /// Custom scroll controller to the scroll calendar view
   final ScrollController? scrollViewController;
 
+  /// Flag to disable day selection
+  final bool? disableDaySelection;
+
   /// Flag to enable dynamic calendar rows based on specific month
   ///
   /// This will make calendar height dynamic to fit real month rows
