@@ -200,6 +200,7 @@ class CalendarDatePicker2Config {
     this.dayModeScrollDirection,
     this.selectedRangeHighlightBuilder,
     this.selectedRangeDecorationPredicate,
+    this.disableDaySelection,
   })  : calendarType = calendarType ?? CalendarDatePicker2Type.single,
         firstDate = DateUtils.dateOnly(firstDate ?? DateTime(1970)),
         lastDate =
@@ -415,9 +416,6 @@ class CalendarDatePicker2Config {
   /// Custom scroll controller to the scroll calendar view
   final ScrollController? scrollViewController;
 
-  /// Flag to disable day selection
-  final bool? disableDaySelection;
-
   /// Flag to enable dynamic calendar rows based on specific month
   ///
   /// This will make calendar height dynamic to fit real month rows
@@ -433,6 +431,9 @@ class CalendarDatePicker2Config {
 
   /// Predicate to determine the day widget box decoration for a day in selected range
   final SelectedRangeDecorationPredicate? selectedRangeDecorationPredicate;
+
+  /// Flag to disable day selection
+  final bool? disableDaySelection;
 
   /// Copy the current [CalendarDatePicker2Config] with some new values
   CalendarDatePicker2Config copyWith({
@@ -507,6 +508,7 @@ class CalendarDatePicker2Config {
     Axis? dayModeScrollDirection,
     SelectedRangeHighlightBuilder? selectedRangeHighlightBuilder,
     SelectedRangeDecorationPredicate? selectedRangeDecorationPredicate,
+    bool? disableDaySelection,
   }) {
     return CalendarDatePicker2Config(
       calendarType: calendarType ?? this.calendarType,
@@ -610,6 +612,7 @@ class CalendarDatePicker2Config {
           selectedRangeHighlightBuilder ?? this.selectedRangeHighlightBuilder,
       selectedRangeDecorationPredicate: selectedRangeDecorationPredicate ??
           this.selectedRangeDecorationPredicate,
+      disableDaySelection: disableDaySelection ?? this.disableDaySelection,
     );
   }
 }
@@ -689,6 +692,7 @@ class CalendarDatePicker2WithActionButtonsConfig
     Axis? dayModeScrollDirection,
     SelectedRangeHighlightBuilder? selectedRangeHighlightBuilder,
     SelectedRangeDecorationPredicate? selectedRangeDecorationPredicate,
+    bool? disableDaySelection,
     this.gapBetweenCalendarAndButtons,
     this.cancelButtonTextStyle,
     this.cancelButton,
@@ -770,6 +774,7 @@ class CalendarDatePicker2WithActionButtonsConfig
           dayModeScrollDirection: dayModeScrollDirection,
           selectedRangeHighlightBuilder: selectedRangeHighlightBuilder,
           selectedRangeDecorationPredicate: selectedRangeDecorationPredicate,
+          disableDaySelection: disableDaySelection,
         );
 
   /// The gap between calendar and action buttons
@@ -881,6 +886,7 @@ class CalendarDatePicker2WithActionButtonsConfig
     Axis? dayModeScrollDirection,
     SelectedRangeHighlightBuilder? selectedRangeHighlightBuilder,
     SelectedRangeDecorationPredicate? selectedRangeDecorationPredicate,
+    bool? disableDaySelection,
   }) {
     return CalendarDatePicker2WithActionButtonsConfig(
       calendarType: calendarType ?? this.calendarType,
@@ -997,6 +1003,7 @@ class CalendarDatePicker2WithActionButtonsConfig
           selectedRangeHighlightBuilder ?? this.selectedRangeHighlightBuilder,
       selectedRangeDecorationPredicate: selectedRangeDecorationPredicate ??
           this.selectedRangeDecorationPredicate,
+      disableDaySelection: disableDaySelection ?? this.disableDaySelection,
     );
   }
 }
